@@ -72,6 +72,16 @@ cd "/Users/sep229/Documents/New project"
 - `dist/release/SystemWatch.app`
 - `dist/release/SystemWatch-macOS.zip`
 
+如需生成 DMG 安装包：
+
+```bash
+./script/package_dmg.sh
+```
+
+DMG 输出位置：
+
+- `dist/release/SystemWatch-macOS.dmg`
+
 当前脚本使用 ad-hoc 签名，适合本地测试或个人分发。如果要公开发布，建议使用 Developer ID 证书签名并进行 notarization。
 
 ## GitHub Release 建议流程
@@ -80,11 +90,12 @@ cd "/Users/sep229/Documents/New project"
 
    ```bash
    ./script/package_release.sh
+   ./script/package_dmg.sh
    ```
 
 2. 确认截图位于 `docs/screenshots/`。
 3. 提交 README、脚本和截图更新。
-4. 在 GitHub 创建 Release，并上传 `dist/release/SystemWatch-macOS.zip`。
+4. 在 GitHub 创建 Release，并上传 `dist/release/SystemWatch-macOS.zip` 和 `dist/release/SystemWatch-macOS.dmg`。
 
 ## 注意事项
 
@@ -160,6 +171,16 @@ The script writes:
 - `dist/release/SystemWatch.app`
 - `dist/release/SystemWatch-macOS.zip`
 
+To create a DMG installer:
+
+```bash
+./script/package_dmg.sh
+```
+
+DMG output:
+
+- `dist/release/SystemWatch-macOS.dmg`
+
 The package uses ad-hoc signing for local distribution. For public distribution, use a Developer ID certificate and notarization.
 
 ## GitHub Release Checklist
@@ -168,11 +189,12 @@ The package uses ad-hoc signing for local distribution. For public distribution,
 
    ```bash
    ./script/package_release.sh
+   ./script/package_dmg.sh
    ```
 
 2. Confirm screenshots are available in `docs/screenshots/`.
 3. Commit the updated README, scripts, and screenshots.
-4. Create a GitHub release and upload `dist/release/SystemWatch-macOS.zip`.
+4. Create a GitHub release and upload `dist/release/SystemWatch-macOS.zip` and `dist/release/SystemWatch-macOS.dmg`.
 
 ## Notes
 
